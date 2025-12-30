@@ -78,17 +78,17 @@ const Contact = () => {
 					<LuMail />
 				</button>
 
-				<Link target='_blank' to='https://www.linkedin.com/in/imkarthees'>
+				<Link target='_blank' to='https://www.linkedin.com/in/mrkarthees'>
 					<button type='button'>
 						<LuLinkedin />
 					</button>
 				</Link>
-				<Link target='_blank' to='https://github.com/imkarthees'>
+				<Link target='_blank' to='https://github.com/mrkarthees'>
 					<button type='button'>
 						<LuGithub />
 					</button>
 				</Link>
-				<Link target='_blank' to='https://dribbble.com/imkarthees'>
+				<Link target='_blank' to='https://dribbble.com/mrkarthees'>
 					<button type='button'>
 						<LuDribbble />
 					</button>
