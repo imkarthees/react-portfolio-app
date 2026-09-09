@@ -1,30 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital,wght@0,300..700;1,300..700&family=Young+Serif&display=swap');
+
 @import 'tailwindcss';
-* {
-	font-family: 'Poppins', sans-serif;
-	list-style: none;
-}
+
+@custom-variant dark (&:where(.dark, .dark *));
+/* ========================================
+   Theme Variables
+======================================== */
+
 :root {
-	--bg: #030712;
-	--bg-layer-one: #0f172b;
-	--bg-layer-two: #1d293d;
-	--border: #1d293d;
-	--accent: #00c951;
-	--accent-layer-one: #00c95028;
-	--white: #fff;
-	--black: #000;
+	/* Fonts */
+	--font-sans: 'Inclusive Sans', sans-serif;
+	--font-serif: 'Young Serif', serif;
+
+	/* Light Theme */
+	--background: #ffffff;
+	--primary-text: #121212;
+	--secondary-text: #666666;
+	--border: #e5e5e5;
+	--accent: #18b85b;
 }
 
-.app-container {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--bg);
+/* Dark Theme */
+.dark {
+	--background: #121212;
+	--primary-text: #e0e0e0;
+	--secondary-text: #b0b0b0;
+	--border: #444444;
+	--accent: #18b85b;
 }
-.container {
-	width: 90%;
-	background-color: var(--bg);
-	border-left: 1px solid var(--border);
-	border-right: 1px solid var(--border);
+
+/* ========================================
+   Tailwind Theme
+======================================== */
+
+@theme {
+	--font-sans: 'Inclusive Sans', sans-serif;
+	--font-serif: 'Young Serif', serif;
+
+	--color-background: var(--background);
+	--color-primary-text: var(--primary-text);
+	--color-secondary-text: var(--secondary-text);
+	--color-border: var(--border);
+	--color-accent: var(--accent);
+}
+/* ========================================
+   Base
+======================================== */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	background-color: var(--background);
+	color: var(--primary-text);
+	font-family: var(--font-sans);
+	transition:
+		background-color 200ms ease,
+		color 200ms ease;
+}
+
+.container-page {
+	width: 100%;
+	max-width: 1440px;
+	margin-inline: auto;
+	padding-inline: 20px;
+}
+
+@media (min-width: 640px) {
+	.container-page {
+		padding-inline: 40px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container-page {
+		padding-inline: 100px;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container-page {
+		padding-inline: 200px;
+	}
+}
+
+/* ========================================
+   Scroll offset for fixed navbar
+  ======================================== */
+
+/* Mobile: header is top-4 (16px) + h-[70px] = ~86px; add breathing room → 100px */
+.scroll-section {
+	scroll-margin-top: 100px;
+}
+
+/* sm (≥640px): header is top-6 (24px) + h-[70px] = ~94px → 110px */
+@media (min-width: 640px) {
+	.scroll-section {
+		scroll-margin-top: 110px;
+	}
+}
+
+/* lg (≥1024px): desktop pill nav is top-10 (40px) + ~52px pill height = ~92px → 120px */
+@media (min-width: 1024px) {
+	.scroll-section {
+		scroll-margin-top: 120px;
+	}
+}
+
+/* ========================================
+   Animations
+  ======================================== */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

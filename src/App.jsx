@@ -1,22 +1,58 @@
-import Navbar from './components/Navbar/Navbar';
-import About from './pages/About/About';
-import Contact from './pages/Contact/Contact';
-import Home from './pages/Home/Home';
-import Project from './pages/Project/Project';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+
+import Home from './pages/Home';
+import Projects from './pages/Projects/Projects';
+import AllProjects from './pages/Projects/AllProjects';
+import ProjectDetail from './pages/Projects/ProjectDetails';
+
+import Experience from './pages/Experience';
+import About from './pages/About';
+import Contact from './pages/Contact';
+
+import Footer from './components/Footer';
 
 const App = () => {
 	return (
-		<>
-			<div className='app-container'>
-				<div className='container'>
-					<Navbar />
-					<Home />
-					<Project />
-					<About />
-					<Contact />
-				</div>
-			</div>
-		</>
+		<BrowserRouter>
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<>
+							<Navbar />
+							<Home />
+							<Projects />
+							<Experience />
+							<About />
+							<Contact />
+							<Footer />
+						</>
+					}
+				/>
+
+				<Route
+					path='/projects'
+					element={
+						<>
+							<AllProjects />
+							<Footer />
+						</>
+					}
+				/>
+
+				<Route
+					path='/projects/:id'
+					element={
+						<>
+							<ProjectDetail />
+							<Footer />
+						</>
+					}
+				/>
+			</Routes>
+		</BrowserRouter>
 	);
 };
 
