@@ -3,8 +3,16 @@ import Heading from '../../components/Heading';
 import ProjectCard from '../../components/ProjectCard';
 import projects from '../../data/project';
 import { ArrowLeft } from 'lucide-react';
+import { useEffect } from 'react';
 
 const AllProjects = () => {
+	useEffect(() => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	}, []);
+
 	return (
 		<section id='all-projects' className='container-page'>
 			{/* Back to Projects */}
