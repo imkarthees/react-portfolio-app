@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects/Projects';
@@ -10,13 +11,13 @@ import ProjectDetail from './pages/Projects/ProjectDetails';
 import Experience from './pages/Experience';
 import About from './pages/About';
 import Contact from './pages/Contact';
-
-import Footer from './components/Footer';
+import NotFound from './pages/NotFound';
 
 const App = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
+				{/* Home */}
 				<Route
 					path='/'
 					element={
@@ -32,6 +33,7 @@ const App = () => {
 					}
 				/>
 
+				{/* All Projects */}
 				<Route
 					path='/projects'
 					element={
@@ -42,6 +44,7 @@ const App = () => {
 					}
 				/>
 
+				{/* Project Details */}
 				<Route
 					path='/projects/:id'
 					element={
@@ -51,6 +54,9 @@ const App = () => {
 						</>
 					}
 				/>
+
+				{/* 404 */}
+				<Route path='*' element={<NotFound />} />
 			</Routes>
 		</BrowserRouter>
 	);
