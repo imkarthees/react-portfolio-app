@@ -55,16 +55,17 @@ const Home = () => {
 			<div className='w-full lg:w-1/2'>
 				<h1
 					className='
-						text-4xl leading-tight font-serif
-						sm:text-5xl
-						lg:text-5xl
-					'
+    font-serif text-4xl leading-[1.15]
+    sm:text-5xl
+    lg:text-5xl
+  '
 				>
-					AI keeps replacing things.
+					AI is my tool, not my replacement.
 					<br />
-					Vision and architecture still need me.
+					<span className='mt-2 inline-block font-sans text-lg leading-relaxed sm:text-xl'>
+						I plan, design, and architect — AI helps me build faster.
+					</span>
 				</h1>
-
 				<p
 					className='
 						mt-5 max-w-xl text-sm leading-6 text-secondary-text
@@ -97,6 +98,7 @@ const Home = () => {
 				className='
 					flex w-full flex-col items-center justify-center
 					lg:w-1/2
+					lg:min-h-[430px]
 				'
 			>
 				<p
@@ -110,17 +112,17 @@ const Home = () => {
 					{currentIllustration.label}
 				</p>
 
-				<img
-					key={currentIndex}
-					src={currentIllustration.src}
-					alt={currentIllustration.alt}
-					className='
-						h-auto w-full max-w-[280px]
-						animate-[fadeIn_500ms_ease-in-out]
-						sm:max-w-[340px]
-						lg:max-w-md
-					'
-				/>
+				<div className='flex h-[320px] w-full items-center justify-center sm:h-[360px] lg:h-[380px]'>
+					<img
+						key={currentIndex}
+						src={currentIllustration.src}
+						alt={currentIllustration.alt}
+						className='
+							h-full w-auto max-w-full object-contain
+							animate-[fadeIn_500ms_ease-in-out]
+						'
+					/>
+				</div>
 			</div>
 		</main>
 	);

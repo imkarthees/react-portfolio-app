@@ -8,6 +8,9 @@ import {
 	SiJsonwebtokens,
 	SiSwagger,
 	SiPostman,
+	SiGooglecloud,
+	SiSequelize,
+	SiUbuntu,
 } from 'react-icons/si';
 import { GrMysql } from 'react-icons/gr';
 import { DiIllustrator } from 'react-icons/di';
@@ -107,36 +110,42 @@ const about = {
 				{ name: 'Node.js', icon: FaNodeJs },
 				{ name: 'Express.js', icon: SiExpress },
 				{ name: 'JWT', icon: SiJsonwebtokens },
-				{ name: 'AWS', icon: FaAws },
+				{ name: 'OAuth', icon: SiGooglecloud },
+				{ name: 'RBAC', icon: null },
+				{ name: 'ABAC', icon: null },
+				{ name: 'RESTful API', icon: null },
+				{ name: 'Amazon EC2', icon: FaAws },
+				{ name: 'Cloud Deployment', icon: SiUbuntu },
 			],
 		},
 
 		{
 			id: 4,
-			title: 'Design',
-			icons: [
-				{ name: 'Figma', icon: FaFigma },
-				{ name: 'Design', icon: DiIllustrator },
-			],
-		},
-
-		{
-			id: 5,
 			title: 'Database',
 			icons: [
 				{ name: 'MySQL', icon: GrMysql },
+				{ name: 'Sequelize ORM', icon: SiSequelize },
 				{ name: 'MongoDB', icon: SiMongodb },
 			],
 		},
 
 		{
-			id: 6,
+			id: 5,
 			title: 'Tools',
 			icons: [
 				{ name: 'Git', icon: FaGitAlt },
 				{ name: 'GitHub', icon: FaGithub },
 				{ name: 'Swagger', icon: SiSwagger },
 				{ name: 'Postman', icon: SiPostman },
+			],
+		},
+
+		{
+			id: 6,
+			title: 'Design',
+			icons: [
+				{ name: 'Figma', icon: FaFigma },
+				{ name: 'Adobe Illustrator', icon: DiIllustrator },
 			],
 		},
 	],
