@@ -81,7 +81,7 @@ const Home = () => {
 						variant='fill'
 						onClick={() =>
 							window.open(
-								'/pdf/Kartheeswaran_Resume.pdf',
+								'/pdf/kartheeswaran_resume.pdf',
 								'_blank',
 								'noopener,noreferrer',
 							)
